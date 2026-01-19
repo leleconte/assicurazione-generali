@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assicurazioni Generali | Partner di Fiducia</title>
+    <style>
+        :root {
+            --generali-red: #c52d2e;
+            --dark-grey: #333;
+            --light-grey: #f4f4f4;
+            --white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            line-height: 1.6;
+            color: var(--dark-grey);
+            background-color: var(--white);
+        }
+
+        /* Navigation */
+        nav {
+            background: var(--white);
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            z-index: 1000;
+        }
+
+        nav .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--generali-red);
+            text-transform: uppercase;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 20px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: var(--dark-grey);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: var(--generali-red);
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 60vh;
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+            padding-top: 60px;
+        }
+
+        .hero h1 { font-size: 3rem; margin-bottom: 10px; }
+
+        /* Sections */
+        section {
+            padding: 80px 10%;
+            border-bottom: 1px solid #eee;
+        }
+
+        h2 {
+            color: var(--generali-red);
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+
+        /* Listino Coming Soon */
+        .coming-soon-box {
+            background: var(--light-grey);
+            padding: 40px;
+            border-radius: 8px;
+            text-align: center;
+            border: 2px dashed var(--generali-red);
+        }
+
+        .badge {
+            background: var(--generali-red);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+        }
+
+        /* Orari Table */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        table td, table th {
+            padding: 12px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+
+        table tr:nth-child(even) { background-color: #f9f9f9; }
+
+        footer {
+            background: var(--dark-grey);
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">Generali</div>
+        <ul>
+            <li><a href="#storia">Storia</a></li>
+            <li><a href="#listino">Listino</a></li>
+            <li><a href="#orari">Orari</a></li>
+            <li><a href="#contatti">Contatti</a></li>
+        </ul>
+    </nav>
+
+    <header class="hero">
+        <h1>Assicurazioni Generali</h1>
+        <p>Dal 1831, proteggiamo il tuo futuro con efficienza e dedizione.</p>
+    </header>
+
+    <section id="storia">
+        <h2>La Nostra Storia</h2>
+        <p>Fondata a Trieste nel 1831, Assicurazioni Generali è diventata uno dei maggiori player globali del settore assicurativo e finanziario. Con una storia radicata nell'innovazione e nella resilienza, abbiamo attraversato secoli di cambiamenti, mantenendo sempre al centro la sicurezza dei nostri clienti.</p>
+    </section>
+
+    <section id="listino">
+        <h2>Listino Servizi</h2>
+        <div class="coming-soon-box">
+            <span class="badge">In Arrivo</span>
+            <h3>Stiamo aggiornando le nostre tariffe</h3>
+            <p>Il nuovo listino prezzi 2026 sarà disponibile a breve per garantirti la massima trasparenza ed efficienza.</p>
+        </div>
+    </section>
+
+    <section id="orari">
+        <h2>Orari di Apertura</h2>
+        <table>
+            <tr>
+                <th>Giorno</th>
+                <th>Orario</th>
+            </tr>
+            <tr>
+                <td>Lunedì - Sabato</td>
+                <td>15:00 - 01:00</td>
+            </tr>
+            <tr>
+                <td>Domenica</td>
+                <td><strong>Orario Variabile</strong> (Si prega di contattare la sede)</td>
+            </tr>
+        </table>
+    </section>
+
+    <section id="contatti">
+        <h2>Contatti</h2>
+        <p>📍 Sede Centrale: Definitive, America</p>
+        <p>📞 Telefono: Not Avaible</p>
+        <p>📧 Email: info@generali.it</p>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Assicurazioni Generali. Tutti i diritti riservati.</p>
+    </footer>
+
+</body>
+</html>
