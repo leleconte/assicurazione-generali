@@ -3,198 +3,307 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Assicurazioni Generali | Partner di Fiducia</title>
+    <title>Generali | Maze Bank Tower - Appuntamenti</title>
     <style>
         :root {
-            --generali-red: #c52d2e;
-            --dark-grey: #333;
-            --light-grey: #f4f4f4;
-            --white: #ffffff;
+            --primary-red: #ff3131;
+            --bg-dark: #0a0a0a;
+            --card-bg: #161616;
+            --text-main: #ffffff;
+            --text-dim: #a0a0a0;
+            --border: #252525;
+            --success: #28a745;
         }
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
         }
 
         body {
+            background-color: var(--bg-dark);
+            color: var(--text-main);
             line-height: 1.6;
-            color: var(--dark-grey);
-            background-color: var(--white);
+            scroll-behavior: smooth;
         }
 
-        /* Navigation */
+        /* Navigazione */
         nav {
-            background: var(--white);
-            padding: 1rem 5%;
+            background: rgba(10, 10, 10, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1.5rem 8%;
             display: flex;
             justify-content: space-between;
             align-items: center;
             position: fixed;
             width: 100%;
             top: 0;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
             z-index: 1000;
+            border-bottom: 1px solid var(--border);
         }
 
-        nav .logo {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: var(--generali-red);
+        .logo {
+            font-size: 1.2rem;
+            font-weight: 900;
+            letter-spacing: 2px;
+            color: var(--text-main);
             text-transform: uppercase;
         }
 
-        nav ul {
-            display: flex;
-            list-style: none;
-        }
+        .logo span { color: var(--primary-red); }
 
-        nav ul li {
-            margin-left: 20px;
-        }
-
+        nav ul { display: flex; list-style: none; }
+        nav ul li { margin-left: 30px; }
         nav ul li a {
             text-decoration: none;
-            color: var(--dark-grey);
+            color: var(--text-dim);
+            font-size: 0.85rem;
             font-weight: 500;
-            transition: color 0.3s;
-        }
-
-        nav ul li a:hover {
-            color: var(--generali-red);
-        }
-
-        /* Hero Section */
-        .hero {
-            height: 60vh;
-            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=1350&q=80');
-            background-size: cover;
-            background-position: center;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            color: white;
-            text-align: center;
-            padding-top: 60px;
-        }
-
-        .hero h1 { font-size: 3rem; margin-bottom: 10px; }
-
-        /* Sections */
-        section {
-            padding: 80px 10%;
-            border-bottom: 1px solid #eee;
-        }
-
-        h2 {
-            color: var(--generali-red);
-            margin-bottom: 20px;
             text-transform: uppercase;
+            transition: 0.3s;
+        }
+        nav ul li a:hover { color: var(--primary-red); }
+
+        /* Container */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 120px 20px 60px;
         }
 
-        /* Listino Coming Soon */
-        .coming-soon-box {
-            background: var(--light-grey);
+        section { margin-bottom: 100px; }
+
+        .section-title {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: var(--primary-red);
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        h2 { font-size: 2.5rem; margin-bottom: 30px; letter-spacing: -1px; }
+
+        .card {
+            background: var(--card-bg);
             padding: 40px;
-            border-radius: 8px;
-            text-align: center;
-            border: 2px dashed var(--generali-red);
+            border-radius: 20px;
+            border: 1px solid var(--border);
         }
 
-        .badge {
-            background: var(--generali-red);
+        /* Modulo Appuntamenti */
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: var(--text-dim);
+            font-size: 0.9rem;
+        }
+
+        input, textarea, select {
+            width: 100%;
+            padding: 12px 15px;
+            background: #202020;
+            border: 1px solid var(--border);
+            border-radius: 8px;
             color: white;
-            padding: 5px 15px;
-            border-radius: 20px;
-            font-size: 0.8rem;
+            font-size: 1rem;
+            transition: 0.3s;
+        }
+
+        input:focus, textarea:focus {
+            outline: none;
+            border-color: var(--primary-red);
+        }
+
+        .btn-submit {
+            background: var(--primary-red);
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 8px;
+            font-weight: 700;
+            cursor: pointer;
             text-transform: uppercase;
+            letter-spacing: 1px;
+            width: 100%;
+            transition: 0.3s;
+        }
+
+        .btn-submit:hover {
+            background: #d12626;
+            transform: scale(1.02);
+        }
+
+        #feedback {
+            margin-top: 15px;
+            padding: 10px;
+            border-radius: 8px;
+            display: none;
+            text-align: center;
         }
 
         /* Orari Table */
-        table {
+        .schedule-table {
             width: 100%;
             border-collapse: collapse;
-            margin-top: 20px;
         }
 
-        table td, table th {
-            padding: 12px;
-            border: 1px solid #ddd;
-            text-align: left;
+        .schedule-table td {
+            padding: 20px;
+            border-bottom: 1px solid var(--border);
         }
 
-        table tr:nth-child(even) { background-color: #f9f9f9; }
+        .time { color: var(--primary-red); text-align: right; font-weight: bold; }
 
         footer {
-            background: var(--dark-grey);
-            color: white;
+            padding: 50px 0;
             text-align: center;
-            padding: 20px;
+            border-top: 1px solid var(--border);
+            color: var(--text-dim);
+            font-size: 0.8rem;
         }
     </style>
 </head>
 <body>
 
     <nav>
-        <div class="logo">Generali</div>
+        <div class="logo">GENE<span>RALI</span></div>
         <ul>
             <li><a href="#storia">Storia</a></li>
-            <li><a href="#listino">Listino</a></li>
+            <li><a href="#prenota">Prenota</a></li>
             <li><a href="#orari">Orari</a></li>
-            <li><a href="#contatti">Contatti</a></li>
+            <li><a href="#sede">Sede</a></li>
         </ul>
     </nav>
 
-    <header class="hero">
-        <h1>Assicurazioni Generali</h1>
-        <p>Dal 1831, proteggiamo il tuo futuro con efficienza e dedizione.</p>
-    </header>
+    <div class="container">
+        
+        <section id="storia">
+            <span class="section-title">Heritage</span>
+            <h2>Oltre due secoli di eccellenza</h2>
+            <div class="card">
+                <p>Nata a Trieste e ora operativa nella Maze Bank Tower, Assicurazioni Generali combina tradizione e innovazione radicale per offrirti la massima protezione nel cuore di Los Santos.</p>
+            </div>
+        </section>
 
-    <section id="storia">
-        <h2>La Nostra Storia</h2>
-        <p>Fondata a Trieste nel 1831, Assicurazioni Generali è diventata uno dei maggiori player globali del settore assicurativo e finanziario. Con una storia radicata nell'innovazione e nella resilienza, abbiamo attraversato secoli di cambiamenti, mantenendo sempre al centro la sicurezza dei nostri clienti.</p>
-    </section>
+        <section id="prenota">
+            <span class="section-title">Booking</span>
+            <h2>Richiedi un Appuntamento</h2>
+            <div class="card">
+                <form id="appointmentForm">
+                    <div class="form-group">
+                        <label>Nome Completo</label>
+                        <input type="text" id="nome" placeholder="Inserisci il tuo nome" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Tipo di Assicurazione</label>
+                        <select id="tipo">
+                            <option value="Veicoli">Assicurazione Veicoli</option>
+                            <option value="Vita">Assicurazione sulla Vita</option>
+                            <option value="Immobili">Assicurazione Immobili</option>
+                            <option value="Altro">Altro / Consulenza Generale</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Messaggio / Note aggiuntive</label>
+                        <textarea id="messaggio" rows="4" placeholder="Dettagli aggiuntivi..."></textarea>
+                    </div>
+                    <button type="submit" class="btn-submit">Invia Richiesta</button>
+                    <div id="feedback"></div>
+                </form>
+            </div>
+        </section>
 
-    <section id="listino">
-        <h2>Listino Servizi</h2>
-        <div class="coming-soon-box">
-            <span class="badge">In Arrivo</span>
-            <h3>Stiamo aggiornando le nostre tariffe</h3>
-            <p>Il nuovo listino prezzi 2026 sarà disponibile a breve per garantirti la massima trasparenza ed efficienza.</p>
-        </div>
-    </section>
+        <section id="orari">
+            <span class="section-title">Availability</span>
+            <h2>Operatività</h2>
+            <div class="card">
+                <table class="schedule-table">
+                    <tr>
+                        <td class="day">Lunedì — Sabato</td>
+                        <td class="time">15:00 - 01:00</td>
+                    </tr>
+                    <tr>
+                        <td class="day">Domenica</td>
+                        <td class="time" style="color: var(--text-dim);">ORARIO VARIABILE</td>
+                    </tr>
+                </table>
+            </div>
+        </section>
 
-    <section id="orari">
-        <h2>Orari di Apertura</h2>
-        <table>
-            <tr>
-                <th>Giorno</th>
-                <th>Orario</th>
-            </tr>
-            <tr>
-                <td>Lunedì - Sabato</td>
-                <td>15:00 - 01:00</td>
-            </tr>
-            <tr>
-                <td>Domenica</td>
-                <td><strong>Orario Variabile</strong> (Si prega di contattare la sede)</td>
-            </tr>
-        </table>
-    </section>
+        <section id="sede">
+            <span class="section-title">Location</span>
+            <h2>Quartier Generale</h2>
+            <div class="card">
+                <h3>MAZE BANK TOWER</h3>
+                <p style="color: var(--text-dim); margin-top: 10px;">Executive Floor - Atrio Centrale</p>
+                <p style="margin-top: 20px;">Riceviamo solo su appuntamento per garantire efficienza e riservatezza.</p>
+            </div>
+        </section>
 
-    <section id="contatti">
-        <h2>Contatti</h2>
-        <p>📍 Sede Centrale: Definitive, America</p>
-        <p>📞 Telefono: Not Avaible</p>
-        <p>📧 Email: info@generali.it</p>
-    </section>
+    </div>
 
     <footer>
-        <p>&copy; 2026 Assicurazioni Generali. Tutti i diritti riservati.</p>
+        <p>GENERALI &copy; 2026 | MAZE BANK TOWER BRANCH</p>
     </footer>
+
+    <script>
+        const webhookURL = "https://discord.com/api/webhooks/1462856276068270224/RNyQI5-_QKn21bb8D3sviAbtvdymnZJwhDqAOvD_FXAf45yPN4qlPBtC6wBctDskSywh";
+
+        document.getElementById('appointmentForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const nome = document.getElementById('nome').value;
+            const tipo = document.getElementById('tipo').value;
+            const messaggio = document.getElementById('messaggio').value;
+            const feedback = document.getElementById('feedback');
+
+            // Struttura del messaggio per Discord
+            const payload = {
+                username: "Segreteria Generali",
+                embeds: [{
+                    title: "📅 Nuova Richiesta Appuntamento",
+                    color: 16724529, // Colore rosso
+                    fields: [
+                        { name: "👤 Cliente", value: nome, inline: true },
+                        { name: "📋 Servizio", value: tipo, inline: true },
+                        { name: "💬 Messaggio", value: messaggio || "Nessuna nota aggiuntiva" }
+                    ],
+                    footer: { text: "Richiesta inviata dalla Maze Bank Tower" },
+                    timestamp: new Date()
+                }]
+            };
+
+            fetch(webhookURL, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(payload)
+            })
+            .then(response => {
+                if (response.ok) {
+                    feedback.style.display = "block";
+                    feedback.style.backgroundColor = "rgba(40, 167, 69, 0.2)";
+                    feedback.style.color = "#28a745";
+                    feedback.innerText = "Richiesta inviata con successo! Ti contatteremo a breve.";
+                    document.getElementById('appointmentForm').reset();
+                } else {
+                    throw new Error();
+                }
+            })
+            .catch(() => {
+                feedback.style.display = "block";
+                feedback.style.backgroundColor = "rgba(255, 49, 49, 0.2)";
+                feedback.style.color = "#ff3131";
+                feedback.innerText = "Errore durante l'invio. Riprova più tardi.";
+            });
+        });
+    </script>
 
 </body>
 </html>
