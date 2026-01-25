@@ -70,7 +70,7 @@
 
         /* Hero Section */
         .hero {
-            height: 50vh;
+            height: 40vh;
             background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=1350&q=80');
             background-size: cover;
             background-position: center;
@@ -83,11 +83,9 @@
             padding-top: 60px;
         }
 
-        .hero h1 { font-size: 3rem; margin-bottom: 10px; }
-
         /* Sections */
         section {
-            padding: 80px 10%;
+            padding: 60px 10%;
             border-bottom: 1px solid #eee;
             max-width: 1200px;
             margin: 0 auto;
@@ -95,72 +93,71 @@
 
         h2 {
             color: var(--generali-red);
-            margin-bottom: 20px;
+            margin-bottom: 25px;
             text-transform: uppercase;
+            text-align: center;
         }
 
-        /* Form Appuntamenti */
-        .appointment-card {
+        /* Listino Styles */
+        .listino-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .price-card {
             background: var(--light-grey);
+            padding: 20px;
+            border-radius: 8px;
+            border-top: 4px solid var(--generali-red);
+        }
+
+        .price-card h3 {
+            margin-bottom: 15px;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 10px;
+            font-size: 1.1rem;
+        }
+
+        .price-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 8px;
+        }
+
+        .price-value {
+            font-weight: bold;
+            color: var(--generali-red);
+        }
+
+        /* Form Style */
+        .appointment-card {
+            background: #fff;
             padding: 30px;
             border-radius: 8px;
             border: 1px solid var(--border-color);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
         }
 
-        .form-group {
-            margin-bottom: 15px;
-        }
-
-        label {
-            display: block;
-            margin-bottom: 5px;
-            font-weight: bold;
-        }
-
-        input, select, textarea {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid var(--border-color);
-            border-radius: 4px;
-            font-size: 1rem;
-        }
+        .form-group { margin-bottom: 15px; }
+        label { display: block; margin-bottom: 5px; font-weight: bold; }
+        input, select, textarea { width: 100%; padding: 10px; border: 1px solid var(--border-color); border-radius: 4px; }
 
         .btn-submit {
             background: var(--generali-red);
             color: white;
-            padding: 12px 25px;
+            padding: 12px;
             border: none;
             border-radius: 4px;
             cursor: pointer;
             font-weight: bold;
+            width: 100%;
             text-transform: uppercase;
-            width: 100%;
         }
 
-        .btn-submit:hover {
-            background: #a32425;
-        }
-
-        #feedback {
-            margin-top: 15px;
-            padding: 10px;
-            display: none;
-            border-radius: 4px;
-            text-align: center;
-        }
-
-        /* Orari Table */
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 20px;
-        }
-
-        table td, table th {
-            padding: 12px;
-            border: 1px solid var(--border-color);
-            text-align: left;
-        }
+        /* Schedule Table */
+        .schedule-table { width: 100%; border-collapse: collapse; }
+        .schedule-table td { padding: 12px; border: 1px solid var(--border-color); }
 
         footer {
             background: var(--dark-grey);
@@ -176,9 +173,9 @@
         <div class="logo">Generali</div>
         <ul>
             <li><a href="#storia">Storia</a></li>
+            <li><a href="#listino">Listino</a></li>
             <li><a href="#prenota">Appuntamenti</a></li>
             <li><a href="#orari">Orari</a></li>
-            <li><a href="#sede">Sede</a></li>
         </ul>
     </nav>
 
@@ -189,7 +186,32 @@
 
     <section id="storia">
         <h2>La Nostra Storia</h2>
-        <p>Dal 1831, Assicurazioni Generali è sinonimo di affidabilità. Con la nostra nuova sede operativa presso la Maze Bank Tower, continuiamo a offrire soluzioni assicurative d'eccellenza con la rapidità che il mercato moderno richiede.</p>
+        <p>Dal 1831, Assicurazioni Generali protegge i sogni dei suoi clienti. Oggi, dalla nostra sede prestigiosa nella <strong>Maze Bank Tower</strong>, offriamo pacchetti esclusivi studiati per garantirti la massima tranquillità operativa e personale.</p>
+    </section>
+
+    <section id="listino">
+        <h2>Listino Prezzi</h2>
+        <div class="listino-grid">
+            <div class="price-card">
+                <h3>Assicurazione Furto & Incendio</h3>
+                <div class="price-item"><span>1 Giorno</span> <span class="price-value">300$</span></div>
+                <div class="price-item"><span>5 Giorni</span> <span class="price-value">1.200$</span></div>
+                <div class="price-item"><span>7 Giorni</span> <span class="price-value">1.500$</span></div>
+                <div class="price-item"><span>30 Giorni</span> <span class="price-value">8.500$</span></div>
+            </div>
+
+            <div class="price-card">
+                <h3>Assicurazione Vita</h3>
+                <div class="price-item"><span>Premio Unico</span> <span class="price-value">10.000$</span></div>
+            </div>
+
+            <div class="price-card">
+                <h3>Assicurazione Immobili</h3>
+                <div class="price-item"><span>1 Mese</span> <span class="price-value">10.000$</span></div>
+                <div class="price-item"><span>2 Mesi</span> <span class="price-value">17.000$</span></div>
+                <div class="price-item"><span>3 Mesi</span> <span class="price-value">25.000$</span></div>
+            </div>
+        </div>
     </section>
 
     <section id="prenota">
@@ -198,48 +220,38 @@
             <form id="appointmentForm">
                 <div class="form-group">
                     <label>Nome e Cognome</label>
-                    <input type="text" id="nome" required>
+                    <input type="text" id="nome" placeholder="Esempio: Mario Rossi" required>
                 </div>
                 <div class="form-group">
-                    <label>Servizio richiesto</label>
+                    <label>Servizio di Interesse</label>
                     <select id="tipo">
-                        <option value="Veicoli">Assicurazione Veicoli</option>
+                        <option value="Furto Incendio">Assicurazione Furto & Incendio</option>
                         <option value="Vita">Assicurazione Vita</option>
                         <option value="Immobili">Assicurazione Immobili</option>
                     </select>
                 </div>
                 <div class="form-group">
-                    <label>Messaggio</label>
-                    <textarea id="messaggio" rows="3"></textarea>
+                    <label>Note / Messaggio</label>
+                    <textarea id="messaggio" rows="3" placeholder="Scrivi qui eventuali dettagli..."></textarea>
                 </div>
-                <button type="submit" class="btn-submit">Invia Richiesta</button>
-                <div id="feedback"></div>
+                <button type="submit" class="btn-submit">Invia al Webhook</button>
+                <p id="feedback" style="display:none; text-align:center; margin-top:10px; font-weight:bold;"></p>
             </form>
         </div>
     </section>
 
     <section id="orari">
         <h2>Orari di Apertura</h2>
-        <table>
-            <tr>
-                <th>Giorno</th>
-                <th>Orario</th>
-            </tr>
-            <tr>
-                <td>Lunedì - Sabato</td>
-                <td>15:00 - 01:00</td>
-            </tr>
-            <tr>
-                <td>Domenica</td>
-                <td><strong>Orario Variabile</strong></td>
-            </tr>
+        <table class="schedule-table">
+            <tr><td>Lunedì - Sabato</td><td><strong>15:00 - 01:00</strong></td></tr>
+            <tr><td>Domenica</td><td><strong>Orario Variabile</strong></td></tr>
         </table>
     </section>
 
-    <section id="sede">
+    <section id="sede" style="text-align: center;">
         <h2>Sede</h2>
-        <p>📍 <strong>Maze Bank Tower</strong>, Piano Executive</p>
-        <p>Riceviamo esclusivamente su appuntamento.</p>
+        <p>📍 <strong>Maze Bank Tower</strong>, Executive Floor</p>
+        <p>Senza numero di telefono - Riceviamo solo su appuntamento.</p>
     </section>
 
     <footer>
@@ -255,14 +267,15 @@
             
             const payload = {
                 embeds: [{
-                    title: "📅 Nuovo Appuntamento - Generali",
-                    color: 12922158, // Rosso Generali
+                    title: "📅 Nuova Richiesta Appuntamento",
+                    color: 12922158,
                     fields: [
-                        { name: "Cliente", value: document.getElementById('nome').value, inline: true },
-                        { name: "Tipo", value: document.getElementById('tipo').value, inline: true },
-                        { name: "Note", value: document.getElementById('messaggio').value || "N/A" }
+                        { name: "👤 Cliente", value: document.getElementById('nome').value, inline: true },
+                        { name: "📋 Servizio", value: document.getElementById('tipo').value, inline: true },
+                        { name: "💬 Messaggio", value: document.getElementById('messaggio').value || "Nessuna nota" }
                     ],
-                    footer: { text: "Sede: Maze Bank Tower" }
+                    footer: { text: "Provenienza: Maze Bank Tower" },
+                    timestamp: new Date()
                 }]
             };
 
@@ -270,15 +283,19 @@
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(payload)
-            }).then(() => {
-                feedback.style.display = "block";
-                feedback.style.color = "green";
-                feedback.innerText = "Richiesta inviata!";
-                document.getElementById('appointmentForm').reset();
+            }).then(response => {
+                if(response.ok) {
+                    feedback.style.display = "block";
+                    feedback.style.color = "green";
+                    feedback.innerText = "✅ Richiesta inviata con successo!";
+                    document.getElementById('appointmentForm').reset();
+                } else {
+                    throw new Error();
+                }
             }).catch(() => {
                 feedback.style.display = "block";
                 feedback.style.color = "red";
-                feedback.innerText = "Errore nell'invio.";
+                feedback.innerText = "❌ Errore durante l'invio.";
             });
         });
     </script>
